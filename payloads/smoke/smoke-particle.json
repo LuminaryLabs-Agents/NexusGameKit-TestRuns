@@ -1,1 +1,26 @@
-{}
+{
+  "version": "1.0",
+  "sequence_id": "smoke-particle",
+  "mode": "dry_run",
+  "commands": [
+    {
+      "id": "create-emitter",
+      "action": "hierarchy.create",
+      "target": "NexusSmoke/Emitter"
+    },
+    {
+      "id": "configure-particles",
+      "action": "particle.configure",
+      "target": "NexusSmoke/Emitter",
+      "params": {
+        "main": {
+          "duration": 5,
+          "startLifetime": 2
+        },
+        "emission": {
+          "rateOverTime": 10
+        }
+      }
+    }
+  ]
+}
