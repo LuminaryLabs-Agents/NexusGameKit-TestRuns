@@ -1,0 +1,24 @@
+{
+  "version": "1.0",
+  "sequence_id": "smoke-terrain",
+  "mode": "dry_run",
+  "commands": [
+    {
+      "id": "create-terrain",
+      "action": "terrain.create",
+      "target": "NexusSmoke/Terrain",
+      "params": {
+        "size": 64,
+        "height": 8
+      }
+    },
+    {
+      "id": "smooth-terrain",
+      "action": "terrain.smooth",
+      "target": "NexusSmoke/Terrain",
+      "params": {
+        "iterations": 1
+      }
+    }
+  ]
+}

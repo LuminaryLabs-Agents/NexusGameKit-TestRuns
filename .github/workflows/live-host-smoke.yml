@@ -1,0 +1,40 @@
+name: Live Host Smoke
+
+on:
+  workflow_dispatch:
+    inputs:
+      rpc_url:
+        description: Nexus Game Kit RPC URL reachable from the runner
+        required: false
+        default: http://127.0.0.1:51234/rpc
+      payload:
+        description: Payload path to execute
+        required: false
+        default: payloads/smoke/smoke-scene-create.json
+
+jobs:
+  live-host-smoke:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Validate payload locally
+        env:
+          PYTHONPATH: runner
+        run: python -m gamekit_runner validate-payload "${{ inputs.payload }}" --report artifacts/live-local-validation.json
+      - name: Run live payload
+        env:
+          PYTHONPATH: runner
+          NEXUS_RPC_URL: ${{ inputs.rpc_url }}
+          NEXUS_TOKEN: ${{ secrets.NEXUS_TOKEN }}
+        run: python -m gamekit_runner submit "${{ inputs.payload }}" --wait --report artifacts/live-host-report.json
+      - name: Upload reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: live-host-smoke-report
+          path: artifacts/*.json

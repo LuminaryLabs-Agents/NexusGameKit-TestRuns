@@ -1,0 +1,25 @@
+{
+  "tracks": [
+    {
+      "name": "unity2020",
+      "unity": "2020.3",
+      "package_path": "packages/unity2020/Packages/com.luminarylabs.nexusgamekit"
+    },
+    {
+      "name": "unity6",
+      "unity": "6000.x",
+      "package_path": "packages/unity6/Packages/com.luminarylabs.nexusgamekit"
+    }
+  ],
+  "payload_directories": [
+    "payloads/smoke"
+  ],
+  "required_rpc_methods": [
+    "nexus.health",
+    "actions.schema",
+    "queue.check",
+    "queue.submit",
+    "queue.results",
+    "scene_state.get"
+  ]
+}

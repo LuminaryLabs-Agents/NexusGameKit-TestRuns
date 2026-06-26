@@ -1,0 +1,18 @@
+{
+  "version": "1.0",
+  "sequence_id": "smoke-scene-create",
+  "mode": "dry_run",
+  "autoSaveAfterEachAction": false,
+  "commands": [
+    {
+      "id": "create-smoke-scene",
+      "action": "scene.create",
+      "target": "Assets/Scenes/NexusSmoke.unity"
+    },
+    {
+      "id": "save-smoke-scene",
+      "action": "scene.save",
+      "target": "Assets/Scenes/NexusSmoke.unity"
+    }
+  ]
+}

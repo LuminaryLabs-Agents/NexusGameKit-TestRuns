@@ -1,0 +1,25 @@
+{
+  "version": "1.0",
+  "sequence_id": "smoke-material",
+  "mode": "dry_run",
+  "commands": [
+    {
+      "id": "create-material",
+      "action": "material.create",
+      "target": "Assets/Materials/NexusSmoke.mat",
+      "params": {
+        "shader": "Universal Render Pipeline/Lit"
+      }
+    },
+    {
+      "id": "set-material-values",
+      "action": "material.bulk_set",
+      "target": "Assets/Materials/NexusSmoke.mat",
+      "params": {
+        "floats": {
+          "_Smoothness": 0.25
+        }
+      }
+    }
+  ]
+}
