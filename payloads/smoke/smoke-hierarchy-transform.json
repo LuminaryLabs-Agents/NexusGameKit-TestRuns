@@ -1,1 +1,20 @@
-{"commands":[]}
+{
+  "version": "1.0",
+  "sequence_id": "smoke-hierarchy-transform",
+  "mode": "dry_run",
+  "commands": [
+    {
+      "id": "create-root",
+      "action": "hierarchy.create",
+      "target": "NexusSmoke/Root"
+    },
+    {
+      "id": "move-root",
+      "action": "transform.update",
+      "target": "NexusSmoke/Root",
+      "params": {
+        "local_scale": [1, 1, 1]
+      }
+    }
+  ]
+}
