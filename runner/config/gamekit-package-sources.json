@@ -1,0 +1,14 @@
+{
+  "repository": "LuminaryLabs-Dev/NexusGameKit",
+  "default_ref": "main",
+  "packages": {
+    "unity2020": "https://github.com/LuminaryLabs-Dev/NexusGameKit.git?path=/packages/unity2020/Packages/com.luminarylabs.nexusgamekit",
+    "unity6": "https://github.com/LuminaryLabs-Dev/NexusGameKit.git?path=/packages/unity6/Packages/com.luminarylabs.nexusgamekit"
+  },
+  "contract_paths": {
+    "actions": "src/shared/Contract/actions.schema.json",
+    "queue": "src/shared/Contract/queue.schema.json",
+    "aliases": "src/shared/Contract/aliases.json",
+    "capabilities": "src/shared/Contract/capabilities.schema.json"
+  }
+}
